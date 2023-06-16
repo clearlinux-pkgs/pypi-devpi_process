@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-devpi_process
-Version  : 0.3.0
-Release  : 1
-URL      : https://files.pythonhosted.org/packages/fe/db/d68d9b9313302f304c8ebebb2fc48c78f6c33f269179c9ca59d3e4459546/devpi_process-0.3.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/fe/db/d68d9b9313302f304c8ebebb2fc48c78f6c33f269179c9ca59d3e4459546/devpi_process-0.3.0.tar.gz
+Version  : 0.3.1
+Release  : 2
+URL      : https://files.pythonhosted.org/packages/48/b1/ebbc0111dbb666ab967f05e2d73d0f7b13c7607628ba1f40917b31100faf/devpi_process-0.3.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/48/b1/ebbc0111dbb666ab967f05e2d73d0f7b13c7607628ba1f40917b31100faf/devpi_process-0.3.1.tar.gz
 Summary  : devpi process provides a programmatic API to create and use a devpi server process
 Group    : Development/Tools
 License  : MIT
@@ -15,6 +15,8 @@ Requires: pypi-devpi_process-license = %{version}-%{release}
 Requires: pypi-devpi_process-python = %{version}-%{release}
 Requires: pypi-devpi_process-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(hatch_vcs)
+BuildRequires : pypi(hatchling)
 BuildRequires : pypi(py)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
@@ -65,10 +67,10 @@ python3 components for the pypi-devpi_process package.
 
 
 %prep
-%setup -q -n devpi_process-0.3.0
-cd %{_builddir}/devpi_process-0.3.0
+%setup -q -n devpi_process-0.3.1
+cd %{_builddir}/devpi_process-0.3.1
 pushd ..
-cp -a devpi_process-0.3.0 buildavx2
+cp -a devpi_process-0.3.1 buildavx2
 popd
 
 %build
@@ -76,15 +78,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680140857
+export SOURCE_DATE_EPOCH=1686926674
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
