@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-devpi_process
-Version  : 0.3.1
-Release  : 2
-URL      : https://files.pythonhosted.org/packages/48/b1/ebbc0111dbb666ab967f05e2d73d0f7b13c7607628ba1f40917b31100faf/devpi_process-0.3.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/48/b1/ebbc0111dbb666ab967f05e2d73d0f7b13c7607628ba1f40917b31100faf/devpi_process-0.3.1.tar.gz
+Version  : 1.0.0
+Release  : 3
+URL      : https://files.pythonhosted.org/packages/97/bf/1bfab9164058e1615e57d5020a1ce58ff831b44fae8c0e16329352ea2340/devpi_process-1.0.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/97/bf/1bfab9164058e1615e57d5020a1ce58ff831b44fae8c0e16329352ea2340/devpi_process-1.0.0.tar.gz
 Summary  : devpi process provides a programmatic API to create and use a devpi server process
 Group    : Development/Tools
 License  : MIT
@@ -31,7 +31,7 @@ BuildRequires : pypi-virtualenv
 [![PyPI](https://img.shields.io/pypi/v/devpi-process?style=flat-square)](https://pypi.org/project/devpi-process)
 [![PyPI - Implementation](https://img.shields.io/pypi/implementation/devpi-process?style=flat-square)](https://pypi.org/project/devpi-process)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/devpi-process?style=flat-square)](https://pypi.org/project/devpi-process)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/devpi-process?style=flat-square)](https://pypistats.org/packages/devpi-process)
+[![Downloads](https://static.pepy.tech/badge/devpi-process/month)](https://pepy.tech/project/devpi-process)
 [![PyPI - License](https://img.shields.io/pypi/l/devpi-process?style=flat-square)](https://opensource.org/licenses/MIT)
 [![check](https://github.com/tox-dev/devpi-process/workflows/check/badge.svg)](https://github.com/tox-dev/devpi-process/actions?query=workflow%3Acheck)
 [![Code style:
@@ -67,10 +67,10 @@ python3 components for the pypi-devpi_process package.
 
 
 %prep
-%setup -q -n devpi_process-0.3.1
-cd %{_builddir}/devpi_process-0.3.1
+%setup -q -n devpi_process-1.0.0
+cd %{_builddir}/devpi_process-1.0.0
 pushd ..
-cp -a devpi_process-0.3.1 buildavx2
+cp -a devpi_process-1.0.0 buildavx2
 popd
 
 %build
@@ -78,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686926674
+export SOURCE_DATE_EPOCH=1692832807
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
