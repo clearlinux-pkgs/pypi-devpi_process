@@ -5,7 +5,7 @@
 #
 Name     : pypi-devpi_process
 Version  : 1.0.0
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/97/bf/1bfab9164058e1615e57d5020a1ce58ff831b44fae8c0e16329352ea2340/devpi_process-1.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/97/bf/1bfab9164058e1615e57d5020a1ce58ff831b44fae8c0e16329352ea2340/devpi_process-1.0.0.tar.gz
 Summary  : devpi process provides a programmatic API to create and use a devpi server process
