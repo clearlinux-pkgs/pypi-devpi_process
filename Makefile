@@ -1,5 +1,5 @@
 PKG_NAME := pypi-devpi_process
-URL = https://files.pythonhosted.org/packages/97/bf/1bfab9164058e1615e57d5020a1ce58ff831b44fae8c0e16329352ea2340/devpi_process-1.0.0.tar.gz
+URL = https://files.pythonhosted.org/packages/d3/9e/31d61b2e4ed138519667eeac3238c7de4cb6303e2368bfb38a8a2948e91e/devpi_process-1.0.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
